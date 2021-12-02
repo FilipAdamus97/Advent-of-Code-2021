@@ -1,4 +1,6 @@
 #Get Input
+import time 
+t0 = time.time() #Start Timer for comparison
 input = open('Inputs/Day_2_Input.txt').read().split()
 
 #Set Variables
@@ -37,3 +39,6 @@ for x in range(0,len(input)-1,2):
                 aim -= int(input[x+1])
 
 print("The answer to Part 1 is: " + str(h*d))
+t1 = time.time() #End timer for comaprison
+total = t1-t0 #Calculate time of operation
+print("Total time of operation: " + str(total))
