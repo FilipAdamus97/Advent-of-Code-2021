@@ -1,4 +1,4 @@
-
+#Get Input
 input = open('Inputs/Day_1_Input.txt').read().split()
 
 #Part 1 
