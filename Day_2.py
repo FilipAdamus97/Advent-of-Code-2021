@@ -1,7 +1,6 @@
-#Get Input
 import time 
 t0 = time.time() #Start Timer for comparison
-input = open('Inputs/Day_2_Input.txt').read().split()
+input = open('Inputs/Day_2_Input.txt').read().split() #Get Input
 
 #Set Variables
 h = 0 #Horizontal position
