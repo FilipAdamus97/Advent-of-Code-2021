@@ -2,6 +2,7 @@ import time
 
 def main():
     t0 = time.time() #Start Timer for comparison
+    print("---------------------")
     input = open('Inputs/Day_3_Input.txt').read().split() #Get Input
 
     #Part 1
@@ -9,10 +10,14 @@ def main():
     print("Answer to Part 1 is " + str(Gamma_Rate * Epsilon_Rate))
 
     #Part 2
+    Calculate_Life_Support(input)
+    #print("Answer to Part 2 is ")
 
+    #Finishing touches
     t1 = time.time() #End timer for comaprison
     total = t1-t0 #Calculate time of operation
     print("Total time of operation: " + str(total))
+    print("---------------------")
 
 def Calculate_Gamma_Epsilon(x):
     Gamma_Rate, Epsilon_Rate = "", "" 
@@ -31,6 +36,10 @@ def Calculate_Gamma_Epsilon(x):
             Epsilon_Rate += "1"
     
     return int(Gamma_Rate, 2), int(Epsilon_Rate, 2)
+
+def Calculate_Life_Support(x):
+
+    print("Answer to Part 2 is ")
 
 
 if __name__ == "__main__":
