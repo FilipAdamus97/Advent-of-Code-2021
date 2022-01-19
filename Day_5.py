@@ -23,6 +23,7 @@ def part_1(input):
         helper = []
 
 
+
     field = np.zeros((1000,1000)) # Matrix with the whole map of the region
 
 
