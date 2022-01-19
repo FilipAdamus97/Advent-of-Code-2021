@@ -22,34 +22,33 @@ def part_1(input):
         end.append(helper)
         helper = []
 
-    print(start[0]) #X1
-    print(end[0]) #X2
-
-    print(start[0][0]) # X1
-    print(start[0][1]) # Y1  
 
     field = np.zeros((1000,1000)) # Matrix with the whole map of the region
 
+
+
+    # Horizontal and Vertical lines only
     for i in range(len(start)): # For every line in Input
         # If line is horizontal (X is the same) 
         if start[i][0] == end[i][0] and end[i][1] > start[i][1]: # If X is constant and Y is increasing
             for j in range(start[i][1],end[i][1]):
-                field[start[i][0]][j] += 1
-        #elif start[i][0] == end[i][0] and end[i][1] < start[i][1]: # If X is constant and Y is decreasing
-            #for j in range(end[i][1],start[i][1]):
-                #field[start[i][0]][j] += 1
+                field[start[i][0]][j+1] += 1
+        elif start[i][0] == end[i][0] and end[i][1] < start[i][1]: # If X is constant and Y is decreasing
+            for j in range(end[i][1],start[i][1],-1):
+                field[start[i][0]][j-1] += 1
 
         # If line is Vertical (Y is the same)
         if start[i][1] == end[i][1] and end[i][0] > start[i][0]: # If Y is constant and X is increasing
             for j in range(start[i][0],end[i][0]):
-                field[j][start[i][1]] += 1
-        #elif start[i][1] == end[i][1] and end[i][0] < start[i][0]: # If Y is constant and X is decreasing
-            #for j in range(end[i][0],start[i][0]):
-                #field[j][start[i][1]] += 1
+                field[j+1][start[i][1]] += 1
+        elif start[i][1] == end[i][1] and end[i][0] < start[i][0]: # If Y is constant and X is decreasing
+            for j in range(end[i][0],start[i][0],-1):
+                field[j-1][start[i][1]] += 1
     
-    
-    for i in range(1000):
-        for j in range(1000):
+
+
+    for i in range(len(field[:][0])):
+        for j in range(len(field[0][:])):
             if field[i][j] > 1:
                 counter += 1
     return counter
