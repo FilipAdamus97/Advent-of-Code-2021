@@ -24,7 +24,7 @@ def part_1(input):
 
 
     field = np.zeros((1000,1000)) # Matrix with the whole map of the region
-#aaa
+
 
     # Horizontal and Vertical lines only
     for i in range(len(start)): # For every line in Input
