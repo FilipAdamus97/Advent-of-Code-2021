@@ -1,7 +1,33 @@
+from decimal import MAX_EMAX
 import time
 
-def part_1(x):
+def part_1(input):
 
+    startPoints = []
+    endPoints = []
+    helper = []
+
+    for i in range(0,len(input),3):
+        x, y = input[i].split(",")
+        helper.append(x)
+        helper.append(y)
+        startPoints.append(helper)
+        helper = []
+        
+        x, y = input[i+2].split(",")
+        helper.append(x)
+        helper.append(y)
+        endPoints.append(helper)
+        helper = []
+
+    print(startPoints[0])
+    print(endPoints[0])
+
+    print(startPoints[1])
+    print(endPoints[1])
+
+    print(startPoints[2])
+    print(endPoints[2])
     return "x"
 
 def part_2(x):
@@ -10,11 +36,7 @@ def part_2(x):
 
 def main():
     t0 = time.time() #Start Timer for comparison
-    input = open('Inputs/Day_4_Input.txt').read().split() #Get Input
-
-    print(input[0])
-    print(input[1])
-    print(input[2])
+    input = open('Inputs/Day_5_Input.txt').read().split() #Get Input
 
     print("---------------------")
 
